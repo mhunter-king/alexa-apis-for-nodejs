@@ -1,3 +1,5 @@
+//TODO: Add advertising
+
 export namespace services {
     /**
      * Represents the interface between ApiClient and a Service Client.
