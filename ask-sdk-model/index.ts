@@ -513,6 +513,7 @@ export interface Context {
      * Provides the current experimentation state
      */
     'Experimentation'?: interfaces.alexa.experimentation.ExperimentationState;
+    'Advertising'?: interfaces.alexa.advertising.Advertising;
 }
 
 /**
@@ -1167,6 +1168,26 @@ export namespace interfaces.alexa.advertisement {
      * @enum
      */
     export type ReasonCode = 'DEVICE_OCCUPIED' | 'UNSUPPORTED_DEVICE' | 'SKILL_DAILY_CAP_LIMIT_REACHED' | 'DOMAIN_DAILY_CAP_LIMIT_REACHED' | 'INTERNAL_SERVER_ERROR' | 'AD_NOT_AVAILABLE';
+}
+
+export namespace interfaces.alexa.advertising {
+    /**
+    * A map that provides the customer's advertising ID and preference for receiving interest-based ads.
+    * @interface
+    */
+    export interface Advertising {
+			/**
+			 * The customer's advertising ID.
+			 * Customer-resettable, unique identifier that maps to the ifa attribute of the OpenRTB API specification.
+			 * Formatted as a version 4 UUID string separated by dashes (8-4-4-4-12).
+			 */
+			advertisingId: string;
+			/**
+			 * Indicates whether the customer wants to receive interest-based ads. Set to true when the customer opts out of interest-based ads and tracking.
+			 * Maps to the lmt attribute of the OpenRTB API specification.
+			 */
+			limitAdTracking: boolean;
+		}
 }
 
 export namespace interfaces.alexa.comms.messagingcontroller {
