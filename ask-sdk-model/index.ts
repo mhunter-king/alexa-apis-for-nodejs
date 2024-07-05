@@ -1171,6 +1171,26 @@ export namespace dynamicEndpoints {
 	}
 }
 
+export namespace interfaces.alexa.advertising {
+	/**
+	 * A map that provides the customer's advertising ID and preference for receiving interest-based ads.
+	 * @interface
+	 */
+	export interface Advertising {
+		/**
+		 * The customer's advertising ID.
+		 * Customer-resettable, unique identifier that maps to the ifa attribute of the OpenRTB API specification.
+		 * Formatted as a version 4 UUID string separated by dashes (8-4-4-4-12).
+		 */
+		advertisingId: string;
+		/**
+		 * Indicates whether the customer wants to receive interest-based ads. Set to true when the customer opts out of interest-based ads and tracking.
+		 * Maps to the lmt attribute of the OpenRTB API specification.
+		 */
+		limitAdTracking: boolean;
+	}
+}
+
 export namespace er.dynamic {
 	/**
 	 * Represents an entity that the skill wants to store. An entity has an optional Id and the value and the synonyms for the entity
